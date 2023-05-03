@@ -1,1 +1,1 @@
-# MIPI_CSI_2
+#Open Source MIPI CSI 2 Core 
