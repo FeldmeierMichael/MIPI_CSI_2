@@ -9,13 +9,17 @@
 
 - mipi_clock: Mipiclock Frequency in MHz
 
+- sys_clock: System Clock Frequenzy in MHz
+
+- mipi_lanes: number of Lanes for MIPI
+
 - mipi_format: Format of Mipi Payload Date RAW8,RAW10
 
 - frame_width: Frame Widith in Pixel 
 
 - frame_height: Frame Height in Pixel 
 
-- adress_out_width: Output Adress Bits
+- address_out_width: Output Address Bits
 
 - data_out_width: Output Data Bits for Pixel Data 
 
