@@ -45,7 +45,12 @@
 
 
 # Comparison with MIPI CSI Cameras
+  
+## IMX219 Raspberry Cam v2 
 
+
+
+## OV5647 aspberry Cam v1
 
 
 
