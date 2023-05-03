@@ -15,4 +15,6 @@
 
 - frame_height: Frame Height in Pixel 
 
+- adress_out_width: Output Adress Bits
+
 - data_out_width: Output Data Bits for Pixel Data 
