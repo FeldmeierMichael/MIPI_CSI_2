@@ -23,3 +23,5 @@
 
 - data_out_width: Output Data Bits for Pixel Data 
 
+![Mipi-Core](mipicore.png)
+
