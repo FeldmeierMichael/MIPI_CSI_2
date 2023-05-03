@@ -34,3 +34,11 @@
    -1:8 Deserialisation possible
 
    -Kintex 7 has  Gigabyte Transceivers for higher Data Rates
+
+# Virtex 7
+  -ISerdes Inputs up to 1600Mbits/s at HP IOBank 1250Mbits/s at HR IOBANK per Lane at best Speed Grade
+    https://docs.xilinx.com/v/u/en-US/ds182_Kintex_7_Data_Sheet S.14
+
+   -1:8 Deserialisation possible
+
+   -Virtex 7 has  Gigabyte Transceivers for higher Data Rates
