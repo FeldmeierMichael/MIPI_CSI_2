@@ -5,7 +5,7 @@
 
 
 ### Parameter for Component:
-- init_file: name of .mem File for Camera Init-Sequence see /I2C_Init/init_mem
+- init_file: name of .mem File for Camera Init-Sequence (see /I2C_Init/init_mem)
 
 - mipi_clock: Mipiclock Frequency in MHz
 
