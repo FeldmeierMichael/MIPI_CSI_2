@@ -1,7 +1,7 @@
 # MIPI CORE
 
 
-## Parameter for Component:
+### Parameter for Component:
 -initfile: name of .mem File for Camera Init-Sequence
 
 -mipiclock: Mipiclock Frequency in MHz
