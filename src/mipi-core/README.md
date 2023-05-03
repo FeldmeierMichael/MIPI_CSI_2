@@ -1,5 +1,8 @@
 # MIPI CORE
 
+- For Lattice ECP5 using IDDRX2F 1-4 Deserializer
+- For Xillinx Series 7 using ISerdes 1-8 Deserializer
+
 
 ### Parameter for Component:
 - init_file: name of .mem File for Camera Init-Sequence
