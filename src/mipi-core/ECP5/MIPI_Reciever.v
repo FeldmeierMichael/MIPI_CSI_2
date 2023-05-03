@@ -1,8 +1,14 @@
 module MIPI_Reciever
 #(parameter
-	mipi_frec=456,
-	
-		)
+	init_file="imx219.mem",
+	mipi_clock=458,
+	sys_clock=100,
+	mipi_lanes=2,
+	mipi_format="RAW8",
+	frame_width=640,
+	frame_height=480,
+	address_out_width=18,
+	data_out_width=32)
 (input sys_clk,reset,lane0_d,mipi_clk,mipi_clk_8,lane1_d,inout lane0_p,lane0_n,lane1_p,lane1_n,output[31:0] data_o,output[31:0] adress_out,
 										output ram_clk,output reg debug0,debug1,debug3,debug2,output termination,rec_data_o,output[31:0] cX,cY);
     
