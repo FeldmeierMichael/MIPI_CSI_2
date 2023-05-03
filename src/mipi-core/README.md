@@ -18,3 +18,4 @@
 - adress_out_width: Output Adress Bits
 
 - data_out_width: Output Data Bits for Pixel Data 
+
