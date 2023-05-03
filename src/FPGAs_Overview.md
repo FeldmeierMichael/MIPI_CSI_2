@@ -49,7 +49,7 @@
 ## OV5647-Raspberry Cam v1 
 
 ## IMX219-Raspberry Cam v2 
-! (images/imx219)
+! (images/imx219.png)
 
 ## IMX708-Raspberry Cam v3
 
