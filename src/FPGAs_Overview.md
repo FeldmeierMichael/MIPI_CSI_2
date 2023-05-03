@@ -42,3 +42,6 @@
    -1:8 Deserialisation possible
 
    -Virtex 7 has  Gigabyte Transceivers for higher Data Rates
+
+
+# Comparison with MIPI CSI Cameras
