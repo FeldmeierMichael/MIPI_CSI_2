@@ -1,7 +1,7 @@
 module MIPI_Reciever
 #(parameter
 	mipi_frec=456,
-	iddr_ratio=4
+	
 		)
 (input sys_clk,reset,lane0_d,mipi_clk,mipi_clk_8,lane1_d,inout lane0_p,lane0_n,lane1_p,lane1_n,output[31:0] data_o,output[31:0] adress_out,
 										output ram_clk,output reg debug0,debug1,debug3,debug2,output termination,rec_data_o,output[31:0] cX,cY);
