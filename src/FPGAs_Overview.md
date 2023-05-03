@@ -21,7 +21,7 @@
 
 # Artix 7
   -ISerdes Inputs up to 1250Mbits/s per Lane at best Speed Grade
-    https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj969rl4tj-AhXKyKQKHSzqAy0QFnoECAoQAQ&url=https%3A%2F%2Fdocs.xilinx.com%2Fv%2Fu%2Fen-US%2Fds181_Artix_7_Data_Sheet&usg=AOvVaw1r_7Zb1cVcwyQMajp2tdKU S.14
+    https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj969rl4tj-AhXKyKQKHSzqAy0QFnoECAoQAQ&url=https%3A%2F%2Fdocs.xilinx.com%2Fv%2Fu%2Fen-US%2Fds181_Artix_7_Data_Sheet&usg=AOvVaw1r_7Zb1cVcwyQMajp2tdKU S.15
 
    -1:8 Deserialisation possible
 
