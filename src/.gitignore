@@ -3,3 +3,5 @@
 *.json
 *.fasm
 *.frames
+*.vcd
+hdmi-core/obj_dir
