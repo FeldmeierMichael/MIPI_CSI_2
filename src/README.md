@@ -51,4 +51,4 @@ CLK_n   -> B1_n -> Pin 23 ->CA_B1_N
 
 <img src="/images/Sche_car.png">
 
-<img src="/images/Sche_car2.png">
+<img src="/images/Sche_car2.PNG">
