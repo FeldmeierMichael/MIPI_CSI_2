@@ -1,5 +1,6 @@
-### Connectors and Schematics:
-MIPI Connector to J10:
+# Connectors and Schematics:
+## HDMI Out
+### HDMI Connector to J10:
 
 TMDS0_p -> A1_p -> Pin 20 \
 TMDS0_n -> A1_n -> Pin 22 
