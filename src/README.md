@@ -16,4 +16,7 @@
 
 <img src="/images/CruviMipi.png">
 
+###Connectors and Schematics:
+MIPI Connector to 
+
 <img src="/images/CruviCam.png">
