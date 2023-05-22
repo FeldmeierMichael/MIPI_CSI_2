@@ -51,4 +51,18 @@ CLK_n   -> B1_n -> Pin 23 ->CA_B1_N
 
 <img src="/images/Sche_car.png">
 
+Connected to Header JB2
+
+TMDS0_p -> A1_p -> Pin 20 -> CA_A1_P -> Pin 63\
+TMDS0_n -> A1_n -> Pin 22 -> CA_A1_N -> Pin 61
+
+TMDS1_p -> A2_p -> Pin 26 -> CA_A2_P -> Pin 86\
+TMDS1_n -> A2_n -> Pin 28 -> CA_A2_N -> Pin 88
+
+TMDS2_p -> A3_p -> Pin 32 -> CA_A3_P -> Pin 45\
+TMDS2_n -> A3_n -> Pin 34 -> CA_A3_P -> Pin 47
+
+CLK_p   -> B1_p -> Pin 21 ->CA_B1_P -> Pin 86\
+CLK_n   -> B1_n -> Pin 23 ->CA_B1_N -> Pin 88
+
 <img src="/images/Sche_car2.PNG">
