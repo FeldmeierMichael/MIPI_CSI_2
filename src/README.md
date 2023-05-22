@@ -10,3 +10,5 @@
 <img src="/images/TEB0707.jpg" >
 
 <img src="/images/CruviMipi.png">
+
+<img src="/images/CruviCam.png">
