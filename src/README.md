@@ -20,6 +20,7 @@
 MIPI Connector to J10:
 
 Relevant Signals HDMI_out:
+
 TMDS0_p -> A1_p -> Pin 20
 TMDS0_n -> A1_n -> Pin 22
 TMDS1_p -> A2_p -> Pin 26
