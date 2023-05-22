@@ -81,3 +81,7 @@ CLK_n   -> B1_n -> Pin 23 ->CA_B1_N -> Pin 78 -> BE_L9_N
 
 <img src="/images/Sche_TE0711.PNG">
 
+
+
+<img src="/images/Sche1_TE0711.PNG">
+
