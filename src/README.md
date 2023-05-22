@@ -20,16 +20,16 @@
 MIPI Connector to J10:
 
 TMDS0_p -> A1_p -> Pin 20 \
-TMDS0_n -> A1_n -> Pin 22 \
+TMDS0_n -> A1_n -> Pin 22 
 
 TMDS1_p -> A2_p -> Pin 26 \
-TMDS1_n -> A2_n -> Pin 28 \
+TMDS1_n -> A2_n -> Pin 28 
 
 TMDS2_p -> A3_p -> Pin 32 \
-TMDS2_n -> A3_n -> Pin 34 \
+TMDS2_n -> A3_n -> Pin 34 
 
 CLK_p   -> B1_p -> Pin 21 \
-CLK_n   -> B1_n -> Pin 23 \
+CLK_n   -> B1_n -> Pin 23 
 
 
 <img src="/images/CruviCam.png">
@@ -38,15 +38,15 @@ CLK_n   -> B1_n -> Pin 23 \
 Schematic Carrier Board:
 
 TMDS0_p -> A1_p -> Pin 20 -> CA_A1_P \
-TMDS0_n -> A1_n -> Pin 22 -> CA_A1_N \
+TMDS0_n -> A1_n -> Pin 22 -> CA_A1_N 
 
 TMDS1_p -> A2_p -> Pin 26 -> CA_A2_P \
-TMDS1_n -> A2_n -> Pin 28 -> CA_A2_N \
+TMDS1_n -> A2_n -> Pin 28 -> CA_A2_N 
 
 TMDS2_p -> A3_p -> Pin 32 -> CA_A3_P \
-TMDS2_n -> A3_n -> Pin 34 -> CA_A3_P \
+TMDS2_n -> A3_n -> Pin 34 -> CA_A3_P 
 
 CLK_p   -> B1_p -> Pin 21 ->CA_B1_P \
-CLK_n   -> B1_n -> Pin 23 ->CA_B1_N \
+CLK_n   -> B1_n -> Pin 23 ->CA_B1_N 
 
 <img src="/images/Sche_car.png">
