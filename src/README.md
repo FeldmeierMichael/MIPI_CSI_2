@@ -16,7 +16,12 @@
 
 <img src="/images/CruviMipi.png">
 
-###Connectors and Schematics:
-MIPI Connector to 
+### Connectors and Schematics:
+MIPI Connector to J10:
 
 <img src="/images/CruviCam.png">
+
+
+Schematic Carrier Board:
+
+<img src="/images/Sche_car.png">
