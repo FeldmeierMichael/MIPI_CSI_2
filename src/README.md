@@ -8,11 +8,11 @@
  
 <img src="/images/TE0711.png">
 
-### TEB0707 Carrier Board three Cruvi HS Connectors
+### TEB0707 Carrier Board three Cruvi HS Connectors:
 
 <img src="/images/TEB0707.jpg" >
 
-### VHDPlus MIPI to Cruvi Boards
+### VHDPlus MIPI to Cruvi Boards:
 
 <img src="/images/CruviMipi.png">
 
