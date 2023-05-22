@@ -46,8 +46,8 @@ TMDS1_n -> A2_n -> Pin 28 -> CA_A2_N
 TMDS2_p -> A3_p -> Pin 32 -> CA_A3_P \
 TMDS2_n -> A3_n -> Pin 34 -> CA_A3_P 
 
-CLK_p   -> B1_p -> Pin 21 ->CA_B1_P \
-CLK_n   -> B1_n -> Pin 23 ->CA_B1_N 
+CLK_p   -> B1_p -> Pin 21 -> CA_B1_P \
+CLK_n   -> B1_n -> Pin 23 -> CA_B1_N 
 
 <img src="/images/Sche_car.png">
 
