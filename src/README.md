@@ -78,3 +78,6 @@ TMDS2_n -> A3_n -> Pin 34 -> CA_A3_P -> Pin 47 -> B35_L21_P
 
 CLK_p   -> B1_p -> Pin 21 ->CA_B1_P -> Pin 76 -> BE_L9_P\
 CLK_n   -> B1_n -> Pin 23 ->CA_B1_N -> Pin 78 -> BE_L9_N
+
+<img src="/images/Sche_TE0711.PNG">
+
