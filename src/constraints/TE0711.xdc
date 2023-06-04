@@ -37,7 +37,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports {TMDS_n[2]}]
 
 
 set_property LOC B1 [get_ports TMDS_p[3]]                  #TMDS3_p-Clock
-set_property IOSTANDARD LVCMOS33 [get_ports {TMDS_p[3]}]
+set_property IOSTANDARD LVCMOS33S [get_ports {TMDS_p[3]}]
 
 set_property LOC A1 [get_ports TMDS_n[3]]                  #TMDS3_n-Clock
 set_property IOSTANDARD LVCMOS33 [get_ports {TMDS_n[3]}]
