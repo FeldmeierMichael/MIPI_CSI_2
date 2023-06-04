@@ -35,9 +35,24 @@ blinky.bit: blinky.frames
 #############################################################
 ##   HDMI-Test										       ##
 #############################################################
+HDMI_test.json: topfiles/HDMI_test.v  
+	yosys -p "read_verilog hdmi-core/HDMI_Transciever.v; read_verilog hdmi-core/TMDS_Encoder.v;	 synth_xilinx -flatten -abc9 -nobram -arch xc7 -top HDMI_test;   write_json HDMI_test.json" $<
 
+HDMI_test.fasm: HDMI_test.json ${CHIPDB}/${PART}.bin
+	nextpnr-xilinx --chipdb ${CHIPDB}/${PART}.bin --xdc constraints/TE0711.xdc --freq 100 --json HDMI_test.json --fasm $@ --verbose --debug	
+	
+HDMI_test.frames: HDMI_test.fasm
+	fasm2frames --part ${PART} --db-root ${DB_DIR}/artix7 $< > $@ #FIXME: fasm2frames should be on PATH
 
+HDMI_test.bit: HDMI_test.frames
+	xc7frames2bit --part_file ${DB_DIR}/artix7/${PART}/part.yaml --part_name ${PART} --frm_file $< --output_file $@
+	cp HDMI_test.bit /media/sf_Shared-Folder
+	cp HDMI_test.bit bitfiles
+	rm HDMI_test.bit
 
+#############################################################
+##   END										           ##
+#############################################################
 
 .PHONY: clean
 clean:

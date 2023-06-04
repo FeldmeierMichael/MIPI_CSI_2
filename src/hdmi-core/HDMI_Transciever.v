@@ -82,9 +82,9 @@ module HDMI_Transciever
 	end
 	end
 
-	ODDRX1F ddr_r(.D0(TMDS_shift_red[0]),.D1(TMDS_shift_red[1]),.SCLK(clk_high),.Q(TMDS_r));
-	ODDRX1F ddr_g(.D0(TMDS_shift_green[0]),.D1(TMDS_shift_green[1]),.SCLK(clk_high),.Q(TMDS_g));
-	ODDRX1F ddr_b(.D0(TMDS_shift_blue[0]),.D1(TMDS_shift_blue[1]),.SCLK(clk_high),.Q(TMDS_b));
+	ODDR ddr_r(.D1(TMDS_shift_red[0]),.D2(TMDS_shift_red[1]),.C(clk_high),.Q(TMDS_r),.CE(1'b1),.R(1'b0));
+	ODDR ddr_g(.D1(TMDS_shift_green[0]),.D2(TMDS_shift_green[1]),.C(clk_high),.Q(TMDS_g),.CE(1'b1),.R(1'b0));
+	ODDR ddr_b(.D1(TMDS_shift_blue[0]),.D2(TMDS_shift_blue[1]),.C(clk_high),.Q(TMDS_b),.CE(1'b1),.R(1'b0));
 	
 
 	assign TMDSd[2]=TMDS_r;
