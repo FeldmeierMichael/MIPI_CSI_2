@@ -20,26 +20,20 @@ module HDMI_test (
 
     wire clk_high,clk_low,pll_fb;
 
-     HDMI_Transciever HDMI(.clk_low(clk_low),.clk_high(clk_high),.reset(1'b0),.red(8'h00),.green(8'hFF),.blue(8'h00),.TMDSd(TMDS));
+     HDMI_Transciever HDMI(.clk_low(clk_low),.clk_high(clk_high),.reset(1'b0),.red(8'h00),.green(8'h00),.blue(8'h00),.TMDSd(TMDS));
 
-    OBUFDS TMDS0(.I(TMDS0[0]),.O(TMDS_p[0]),.OB(TMDS_n[0]));
-    OBUFDS TMDS1(.I(TMDS0[1]),.O(TMDS_p[1]),.OB(TMDS_n[1]));
-    OBUFDS TMDS2(.I(TMDS0[2]),.O(TMDS_p[2]),.OB(TMDS_n[2]));
-    OBUFDS TMDS3(.I(TMDS0[3]),.O(TMDS_p[3]),.OB(TMDS_n[3]));
-
+    OBUFDS TMDS0(.I(TMDS[0]),.O(TMDS_p[0]),.OB(TMDS_n[0]));
+    OBUFDS TMDS1(.I(TMDS[1]),.O(TMDS_p[1]),.OB(TMDS_n[1]));
+    OBUFDS TMDS2(.I(TMDS[2]),.O(TMDS_p[2]),.OB(TMDS_n[2]));
+    OBUFDS TMDS3(.I(TMDS[3]),.O(TMDS_p[3]),.OB(TMDS_n[3]));
+    
      PLLE2_BASE #(
         .CLKFBOUT_MULT(5'd5),
         .CLKIN1_PERIOD(10.0),
         .CLKOUT0_DIVIDE(5'd4),
         .CLKOUT0_PHASE(1'd0),
         .CLKOUT1_DIVIDE(4'd20),
-        .CLKOUT1_PHASE(1'd0),
-        .CLKOUT2_DIVIDE(3'd4),
-        .CLKOUT2_PHASE(1'd0),
-        .CLKOUT3_DIVIDE(3'd4),
-        .CLKOUT3_PHASE(7'd90),
-        .CLKOUT4_DIVIDE(4'd8),
-        .CLKOUT4_PHASE(1'd0),
+        .CLKOUT1_PHASE(1'd0),     
         .DIVCLK_DIVIDE(1'd1),
         .REF_JITTER1(0.01),
         .STARTUP_WAIT("FALSE")
@@ -47,8 +41,8 @@ module HDMI_test (
         .CLKFBIN(pll_fb),
         .CLKIN1(sys_clk),        
         .CLKFBOUT(pll_fb),
-        .CLKOUT0(clk_low),
-        .CLKOUT1(clk_high)       
+        .CLKOUT0(clk_high),
+        .CLKOUT1(clk_low)       
     );
     /*
     PLLE2_ADV #(
@@ -74,6 +68,28 @@ module HDMI_test (
 	.CLKFBOUT(pll_fb),
 	.CLKOUT0(clk_low),
 	.CLKOUT1(clk_high)	
+);
+
+PLLE2_ADV #(
+	.CLKFBOUT_MULT(4'd8),
+	.CLKIN1_PERIOD(5.0),
+	.CLKOUT0_DIVIDE(5'd20),
+	.CLKOUT0_PHASE(1'd0),
+	.CLKOUT1_DIVIDE(3'd5),
+	.CLKOUT1_PHASE(1'd0),
+	.CLKOUT2_DIVIDE(4'd8),
+	.CLKOUT2_PHASE(1'd0),
+	.DIVCLK_DIVIDE(1'd1),
+	.REF_JITTER1(0.01),
+	.STARTUP_WAIT("FALSE")
+) PLLE2_ADV (
+	.CLKFBIN(pll_fb),
+	.CLKIN1(sys_clk),
+	.PWRDWN(1'b0),
+	.RST(1'b0),
+	.CLKFBOUT(pll_fb),
+	.CLKOUT0(clk_high),
+	.CLKOUT1(clk_low)	
 );
 */
 endmodule
