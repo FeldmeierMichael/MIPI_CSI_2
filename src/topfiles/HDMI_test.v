@@ -50,5 +50,30 @@ module HDMI_test (
         .CLKOUT0(clk_low),
         .CLKOUT1(clk_high)       
     );
-
+    /*
+    PLLE2_ADV #(
+	.CLKFBOUT_MULT(5'd16),
+	.CLKIN1_PERIOD(10.0),
+	.CLKOUT0_DIVIDE(5'd16),
+	.CLKOUT0_PHASE(1'd0),
+	.CLKOUT1_DIVIDE(4'd8),
+	.CLKOUT1_PHASE(1'd0),
+	.CLKOUT2_DIVIDE(3'd4),
+	.CLKOUT2_PHASE(1'd0),
+	.CLKOUT3_DIVIDE(3'd4),
+	.CLKOUT3_PHASE(7'd90),
+	.CLKOUT4_DIVIDE(4'd8),
+	.CLKOUT4_PHASE(1'd0),
+	.DIVCLK_DIVIDE(1'd1),
+	.REF_JITTER1(0.01),
+	.STARTUP_WAIT("FALSE")
+) PLLE2_ADV (
+	.CLKFBIN(pll_fb),
+	.CLKIN1(sys_clk),	
+	.RST(0),
+	.CLKFBOUT(pll_fb),
+	.CLKOUT0(clk_low),
+	.CLKOUT1(clk_high)	
+);
+*/
 endmodule
