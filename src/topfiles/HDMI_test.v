@@ -20,7 +20,7 @@ module HDMI_test (
 
     wire clk_high,clk_low,pll_fb;
 
-     HDMI_Transciever HDMI(.clk_low(clk_low),.clk_high(clk_high),.reset(1'b0),.red(8'h00),.green(8'h00),.blue(8'h00),.TMDSd(TMDS));
+     HDMI_Transciever HDMI(.clk_low(clk_low),.clk_high(clk_high),.reset(1'b0),.red(8'h00),.green(8'hff),.blue(8'h00),.TMDSd(TMDS));
 
     OBUFDS #(.IOSTANDARD("LVCMOS33"),.SLEW("FAST")) TMDS0(.I(TMDS[0]),.O(TMDS_p[0]),.OB(TMDS_n[0]));
     OBUFDS #(.IOSTANDARD("LVCMOS33"),.SLEW("FAST")) TMDS1(.I(TMDS[1]),.O(TMDS_p[1]),.OB(TMDS_n[1]));
