@@ -13,14 +13,14 @@ module HDMI_test (
 
     wire clk_high,clk_high2,clk_low,clk_low2,pll_fb;
 
-     HDMI_Transciever HDMI(.clk_low(clk_low),.clk_high(clk_high2),.reset(1'b0),.red(8'h00),.green(8'hff),.blue(8'h00),.TMDSd(TMDS));
+     HDMI_Transciever HDMI(.clk_low(clk_low),.clk_high(clk_high),.reset(1'b0),.red(8'h00),.green(8'hff),.blue(8'h00),.TMDSd(TMDS));
 
     OBUFDS  TMDS0(.I(TMDS[0]),.O(TMDS_p[0]),.OB(TMDS_n[0]));
     OBUFDS  TMDS1(.I(TMDS[1]),.O(TMDS_p[1]),.OB(TMDS_n[1]));
     OBUFDS  TMDS2(.I(TMDS[2]),.O(TMDS_p[2]),.OB(TMDS_n[2]));
     OBUFDS  TMDS3(.I(TMDS[3]),.O(TMDS_p[3]),.OB(TMDS_n[3]));
 
-	BUFG BUFG_TMDSp(.I(clk_high), .O(clk_high2));
+	
     
     PLLE2_BASE    #(
         .BANDWIDTH("OPTIMIZED"),    // OPTIMIZED, HIGH, LOW
@@ -29,7 +29,7 @@ module HDMI_test (
         .CLKIN1_PERIOD(10.0),    // Input clock period in ns to ps resolution
         // CLKOUT0_DIVIDE - CLKOUT5_DIVIDE: divide amount for each CLKOUT(1-128)
         .CLKOUT0_DIVIDE(40),    // 25 MHz
-        .CLKOUT1_DIVIDE(8),    // 125 MHz
+        .CLKOUT1_DIVIDE(4),    // 125 MHz
         .CLKOUT2_DIVIDE(8),    // 100 MHz
         .CLKOUT3_DIVIDE(16),    //  50 MHz
         .CLKOUT4_DIVIDE(32),    //  25 MHz
