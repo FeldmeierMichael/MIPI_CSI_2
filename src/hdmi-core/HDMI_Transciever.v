@@ -25,15 +25,12 @@ module HDMI_Transciever
 		if(reset==1)begin
 			CounterX<=0;
 			addr_r=0;
-		end else begin
-			
+		end else begin			
 		if(CounterX==h_tot_pixel-1)begin
-			CounterX <=0;
-			//addr=CounterY*1280;
+			CounterX <=0;			
 		end else begin
 			CounterX <=CounterX+1;		
-			addr_r=(DrawArea==1)?addr_r+1:addr_r;
-			
+			addr_r=(DrawArea==1)?addr_r+1:addr_r;			
 		end
 		vSync <= ((CounterY>=v_pixel+v_front_porch) && (CounterY<v_tot_pixel-v_back_porch)&&(CounterX<h_tot_pixel-2))||((CounterY==v_pixel+v_front_porch-1)&& (CounterX>=h_tot_pixel-2));
 		if(CounterX==h_tot_pixel-1)begin			
@@ -44,19 +41,7 @@ module HDMI_Transciever
 		end		
 		end	
 	
-	/*always @(posedge clk_low)begin 
-		if(reset==1) begin
-			vSync<=0;
-			CounterY<=0;
-			cntY<=0;
-		end else begin		
-		vSync <= ((CounterY>=v_pixel+v_front_porch) && (CounterY<v_tot_pixel-v_back_porch)&&(CounterX<h_tot_pixel-2))||((CounterY==v_pixel+v_front_porch-1)&& (CounterX>=h_tot_pixel-2));
-		if(CounterX==h_tot_pixel-1)begin			
-			CounterY <= (CounterY==v_tot_pixel-1) ? 0 : CounterY+1;
-			
-		end	
-		end
-	end*/
+	
 	always @(posedge clk_low) hSync <=(reset==1)? 0 : ((CounterX>=h_pixel+h_front_porch) && (CounterX<h_tot_pixel-h_back_porch));		
 		////////////////////////////////////////////////////////////////////////
 	wire [9:0] TMDS_red, TMDS_green, TMDS_blue;	
@@ -92,15 +77,6 @@ module HDMI_Transciever
 	assign TMDSd[0]=TMDS_b;
 	assign TMDSd[3]=clk_low;
 
-/*
-	reg[7:0] red_bay,green_bay,blue_bay;
-
-	always @(posedge clk_low) begin
-		red_bay=(CounterY[0])?(CounterX[0]?0:0):(CounterX[0]?red:0);
-	    green_bay=(CounterY[0])?(CounterX[0]?green:0):(CounterX[0]?0:green);
-		blue_bay=(CounterY[0])?(CounterX[0]?0:blue):(CounterX[0]?0:0);
-	end
-	*/
 	
 	TMDS_Encoder encoder0 (.clklow(clk_low),.reset(reset),.state(DrawArea),.pix_data(blue),.H_VSync_Ctr({vSync,hSync}),.q_out(TMDS_blue));
 	TMDS_Encoder encoder1 (.clklow(clk_low),.reset(reset),.state(DrawArea),.pix_data(green),.H_VSync_Ctr(2'b0),.q_out(TMDS_green));
