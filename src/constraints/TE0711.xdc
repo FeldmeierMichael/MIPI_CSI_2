@@ -43,6 +43,18 @@ set_property LOC B4 [get_ports TMDS_n[3]]                  #TMDS3_n-Clock
 set_property IOSTANDARD LVCMOS33 [get_ports {TMDS_n[3]}]
 
 
+
+set_property LOC F1 [get_ports SCL]                  #SCL
+set_property IOSTANDARD LVCMOS33 [get_ports {SCL}]
+
+
+set_property LOC D3 [get_ports HPD]                  #HPD
+set_property IOSTANDARD DIFF_LVCMOS33 [get_ports {HPD}]
+
+
+set_property LOC E1 [get_ports SDA]                  #SDA
+set_property IOSTANDARD DIFF_LVCMOS33 [get_ports {SDA}]
+
 #############################################################
 ##   Clock Constraints    								   ##
 #############################################################

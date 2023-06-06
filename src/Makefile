@@ -46,7 +46,7 @@ HDMI_test.frames: HDMI_test.fasm
 
 HDMI_test.bit: HDMI_test.frames
 	xc7frames2bit --part_file ${DB_DIR}/artix7/${PART}/part.yaml --part_name ${PART} --frm_file $< --output_file $@
-	cp HDMI_test.bit /media/sf_Shared_Folder
+	cp HDMI_test.bit /media/sf_Shared-Folder
 	cp HDMI_test.bit bitfiles
 	rm HDMI_test.bit
 
