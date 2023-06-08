@@ -1,8 +1,8 @@
-# Testsetups for Xillinx Series 7
+# Testsetups for Xilinx Series 7
 
 ## Artix 7 Testsetup
 
- Artix 7 100T Trenz TE0711 with Carierboard TEB0707 and VHDPlus Cruve-MIPI HS Adapter
+ Artix 7 100T Trenz TE0711 with Carrierboard TEB0707 and VHDPlus Cruvi-MIPI HS Adapter
  
  ### TE0711 Artix 7 100T Board:
  
