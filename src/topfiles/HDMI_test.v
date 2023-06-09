@@ -6,12 +6,14 @@ module HDMI_test (
     output wire[3:0] TMDS_p,
     output wire[3:0] TMDS_n,
 	output wire SDA,SCL,HPD
+    
     );	
     wire[3:0] TMDS;
 
     wire clk_high,clk_low,pll_fb;
+    wire[20:0] read_addr;
 
-     HDMI_Transciever HDMI(.clk_low(clk_low),.clk_high(clk_high),.reset(1'b0),.red(8'hff),.green(8'h00),.blue(8'h00),.TMDSd(TMDS));
+     HDMI_Transciever HDMI(.clk_low(clk_low),.clk_high(clk_high),.reset(1'b0),.red(rgb_v),.green(rgb_v),.blue(rgb_v),.TMDSd(TMDS),.addr(read_addr));
 
     OBUFDS  TMDS0(.I(TMDS[0]),.O(TMDS_p[0]),.OB(TMDS_n[0]));
     OBUFDS  TMDS1(.I(TMDS[1]),.O(TMDS_p[1]),.OB(TMDS_n[1]));
@@ -57,5 +59,51 @@ module HDMI_test (
                 .RST(1'b0),
                 .CLKFBIN(pll_fb)    // 1-bit input, feedback clock
     );
+   
+    wire[31:0] ramdata;
+    reg[7:0] counter;
+    reg[31:0] color_w;
+    reg[7:0] rgb_v;
 
+    dpram_dualclock DPR(.addr_b(read_addr[18:2]),
+	.we_b(0),.clk_b(clk_low),.data_out(ramdata));
+
+    always @(posedge clk_low) begin		
+		if(counter>=3)begin
+			counter<=0;
+			color_w<=ramdata;
+		end else begin
+			counter<=counter+1;
+			color_w<={8'h00,color_w[31:8]};			
+		end
+		rgb_v<=color_w[7:0];		
+	end
+    
+endmodule
+
+
+module dpram_dualclock
+	(
+		input [31:0] data_a, data_b,
+		input [16:0] addr_a,input [16:0] addr_b,input[1:0]bank,
+		input we_a, we_b, clk, clk_b,
+		output reg [31:0] data_out
+	);
+		reg [31:0] ram[76799:0];	
+		initial $readmemh("testimage.mem",ram);	
+
+		// Port A 
+		always @ (posedge clk)
+		begin		
+			if(we_a)begin
+				ram[addr_a] <= data_a;
+			end		
+		end 
+		// Port B 
+		always @ (posedge clk_b)
+		begin		
+
+			data_out<=ram[addr_b];		
+		end
+		
 endmodule
