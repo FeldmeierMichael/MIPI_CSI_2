@@ -36,7 +36,7 @@ blinky.bit: blinky.frames
 ##   HDMI-Test										       ##
 #############################################################
 HDMI_test.json: topfiles/HDMI_test.v  
-	yosys -p "read_verilog hdmi-core/HDMI_Transciever.v; read_verilog hdmi-core/TMDS_Encoder.v;	 synth_xilinx -flatten -abc9 -nobram -arch xc7 -top HDMI_test;   write_json HDMI_test.json" $<
+	yosys -p "read_verilog hdmi-core/HDMI_Transciever.v; read_verilog hdmi-core/TMDS_Encoder.v;	 synth_xilinx -flatten -abc9  -arch xc7 -top HDMI_test;   write_json HDMI_test.json" $<
 
 HDMI_test.fasm: HDMI_test.json ${CHIPDB}/${PART}.bin
 	nextpnr-xilinx --chipdb ${CHIPDB}/${PART}.bin --xdc constraints/TE0711.xdc --freq 100 --json HDMI_test.json --fasm $@ --verbose --debug	
