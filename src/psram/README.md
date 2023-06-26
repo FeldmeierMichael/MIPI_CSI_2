@@ -2,8 +2,7 @@
 ## State Machine
 ```mermaid
 graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+    INIT-->IDLE;
+    IDLE-->OP;
+    OP-->IDLE;
 ```
