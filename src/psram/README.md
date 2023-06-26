@@ -1,4 +1,4 @@
-#PSRAM Contoller
+# PSRAM Contoller
 
 ```mermaid
 graph TD;
