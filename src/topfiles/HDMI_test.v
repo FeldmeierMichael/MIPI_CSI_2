@@ -5,7 +5,7 @@ module HDMI_test (
     output wire[2:0] led,
     output wire[3:0] TMDS_p,
     output wire[3:0] TMDS_n,
-	output wire SDA,SCL,HPD
+	output wire SDA,SCL, HPD
     
     );	
     wire[3:0] TMDS;
