@@ -60,17 +60,21 @@ module HDMI_test (
                 .CLKFBIN(pll_fb)    // 1-bit input, feedback clock
     );
    
-    wire[31:0] ramdata;
+    wire[23:0] ramdata;
     reg[7:0] counter;
     reg[31:0] color_w;
     reg[7:0] rgb_v;
 
     dpram_dualclock DPR(.addr_b(read_addr[18:2]),
 	.we_b(0),.clk_b(clk_low),.data_out(ramdata));
+    
 
-    assign rgb_v= ramdata[7:0];
+    /*BRAM Ram0(.addr(read_addr[10:2]),
+	.clk_en(0),.clk(clk_low),.data_out(ramdata));
+    */
+    //assign rgb_v= ramdata[7:0];
 
-    /*always @(posedge clk_low) begin		
+    always @(posedge clk_low) begin		
 		if(counter>=3)begin
 			counter<=0;
 			color_w<=ramdata;
@@ -79,7 +83,7 @@ module HDMI_test (
 			color_w<={8'h00,color_w[31:8]};			
 		end
 		rgb_v<=color_w[7:0];		
-	end*/
+	end
     
 endmodule
 
@@ -91,7 +95,7 @@ module dpram_dualclock
 		input we_a, we_b, clk, clk_b,
 		output reg [31:0] data_out
 	);
-		reg [31:0] ram[511:0];	
+		reg [31:0] ram[1000:0];	
 		//initial $readmemh("testimage.mem",ram);	
 
 		// Port A 
@@ -108,3 +112,21 @@ module dpram_dualclock
             end
 		
 endmodule
+
+module BRAM
+	(		
+		input [9:0] addr,
+		input clk, clk_en,
+		output reg [23:0] data_out
+	);
+		reg [23:0] ram[639:0];	
+		//initial $readmemh("testimage.mem",ram);		
+		always @ (posedge clk)
+            begin
+                if(clk_en) begin
+                    data_out<=ram[addr];
+                end		
+            end
+		
+endmodule
+
